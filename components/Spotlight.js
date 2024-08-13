@@ -16,7 +16,7 @@ export default function Spotlight({ image, artist }) {
         height={300}
         priority
       />
-      <h1>{artist}</h1>
+      <h2>{artist}</h2>
     </div>
   );
 }

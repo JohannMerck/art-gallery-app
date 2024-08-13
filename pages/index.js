@@ -32,6 +32,7 @@ export default function Home() {
   return (
     <div>
       <ArtPieces pieces={data} />
+
       <StyledButtonWrapper>
         <StyledButton onClick={toggleButtonClick}>Show Spotlight</StyledButton>
         <StyledHideButton onClick={toggleHideButton}>
