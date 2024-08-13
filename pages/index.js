@@ -1,33 +1,19 @@
-import React, { useState } from "react";
-import useSWR from "swr";
-import ArtPieces from "../components/ArtPieces";
-import { SpotlightMain } from "@/components/Spotlight";
-import { StyledButton } from "@/public/ButtonStyles";
-import { getRandomSpotlightPiece } from "@/components/Spotlight";
+import { useState, useEffect } from "react";
+import { getRandomSpotlightPiece, SpotlightMain } from "@/components/Spotlight";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
-
-export default function Home() {
-  const { data, error } = useSWR(
-    "https://example-apis.vercel.app/api/art",
-    fetcher
-  );
-
+export default function SpotlightPage({ artPieces }) {
   const [spotlightPiece, setSpotlightPiece] = useState(null);
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  useEffect(() => {
+    if (artPieces && artPieces.length > 0) {
+      setSpotlightPiece(getRandomSpotlightPiece(artPieces));
+    }
+  }, [artPieces]);
 
-  const toggleButtonClick = () => {
-    setSpotlightPiece(getRandomSpotlightPiece(data));
-  };
+  if (!artPieces) return <div>Loading...</div>;
 
   return (
     <div>
-      <ArtPieces pieces={data} />
-
-      <StyledButton onClick={toggleButtonClick}>Show Spotlight</StyledButton>
-
       {spotlightPiece && <SpotlightMain artPieces={[spotlightPiece]} />}
     </div>
   );
