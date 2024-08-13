@@ -33,3 +33,5 @@ const styles = {
     transition: "fill 0.3s, stroke 0.3s",
   },
 };
+
+// FavoriteButton soll bewirken, dass favorisiertes Bild in Array gespeichert wird, mit ID, name, etc.
