@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import FavoriteButton from "./FavoriteButton";
+import { StyledImageWrapper } from "@/styles";
 
 function ArtPiecePreview({ image, title, artist }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -12,20 +13,23 @@ function ArtPiecePreview({ image, title, artist }) {
 
   return (
     <div>
-      <Image
-        src={image}
-        alt={title || "Artwork"}
-        width={300}
-        height={300}
-        priority
-      />
-      <FavoriteButton
-        isFavorite={isFavorite}
-        onToggleFavorite={toggleFavoriteStatus}
-      />
+      <StyledImageWrapper>
+        <Image
+          src={image}
+          alt={title || "Artwork"}
+          width={500}
+          height={500}
+          priority
+        />
 
-      <h2>{title}</h2>
-      <p>{artist}</p>
+        <FavoriteButton
+          isFavorite={isFavorite}
+          onToggleFavorite={toggleFavoriteStatus}
+        />
+
+        <h2>{title}</h2>
+        <p>{artist}</p>
+      </StyledImageWrapper>
     </div>
   );
 }

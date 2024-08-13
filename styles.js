@@ -19,3 +19,7 @@ export const StyledFlexContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
 `;
+
+export const StyledImageWrapper = styled.body`
+  margin-left: 10px;
+`;

@@ -1,6 +1,7 @@
 import GlobalStyle from "../styles";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
+import { StyledBody } from "../styles";
 
 const API_URL = "https://example-apis.vercel.app/api/art";
 
@@ -16,11 +17,11 @@ export default function App({ Component, pageProps }) {
     fetchArtPieces();
   }, []);
   return (
-    <>
+    <div>
       <GlobalStyle />
       <Layout>
         <Component {...pageProps} artPieces={artPieces} />
       </Layout>
-    </>
+    </div>
   );
 }

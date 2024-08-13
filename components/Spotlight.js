@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { StyledImageWrapper } from "@/styles";
 
 export function getRandomSpotlightPiece(artPieces) {
   const randomIndex = Math.floor(Math.random() * artPieces.length);
@@ -9,15 +10,17 @@ export function getRandomSpotlightPiece(artPieces) {
 export default function Spotlight({ image, artist, title }) {
   return (
     <div>
-      <Image
-        src={image}
-        alt={`Artwork by ${artist}`}
-        width={300}
-        height={300}
-        priority
-      />
-      <p>{artist}</p>
-      <h1>{title}</h1>
+      <StyledImageWrapper>
+        <Image
+          src={image}
+          alt={`Artwork by ${artist}`}
+          width={500}
+          height={500}
+          priority
+        />
+        <p>{artist}</p>
+        <h1>{title}</h1>
+      </StyledImageWrapper>
     </div>
   );
 }

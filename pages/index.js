@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getRandomSpotlightPiece, SpotlightMain } from "@/components/Spotlight";
 import { StyledButton, StyledHideButton } from "@/public/ButtonStyles";
-import { StyledFlexContainer } from "@/styles";
+import { StyledFlexContainer, StyledBody } from "@/styles";
 
 export default function SpotlightPage({ artPieces }) {
   const [spotlightPiece, setSpotlightPiece] = useState(null);
