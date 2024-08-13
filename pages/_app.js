@@ -1,6 +1,6 @@
 import GlobalStyle from "../styles";
-import Spotlight from "./Spotlight";
-import { SpotlightMain } from "./Spotlight";
+
+import { SpotlightMain } from "../components/Spotlight";
 
 export default function App({ Component, pageProps }) {
   return (
