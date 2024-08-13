@@ -24,13 +24,14 @@ export default function Spotlight({ image, artist, title }) {
 
 export function SpotlightMain({ artPieces }) {
   const randomArtPiece = getRandomSpotlightPiece(artPieces);
+  console.log(randomArtPiece);
 
   return (
     <div>
       <Spotlight
         image={randomArtPiece.imageSource}
         artist={randomArtPiece.artist}
-        title={randomArtPiece.title}
+        title={randomArtPiece.name}
       />
     </div>
   );
