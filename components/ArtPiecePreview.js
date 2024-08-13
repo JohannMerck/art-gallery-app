@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { StyledFavoriteButton } from "@/public/ButtonStyles";
+
 import { StyledArtPiecesContainer } from "@/styles";
 
 function ArtPiecePreview({ image, title, artist }) {
