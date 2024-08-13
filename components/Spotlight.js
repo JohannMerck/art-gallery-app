@@ -6,7 +6,7 @@ export function getRandomSpotlightPiece(artPieces) {
   return artPieces[randomIndex];
 }
 
-export default function Spotlight({ image, artist }) {
+export default function Spotlight({ image, artist, title }) {
   return (
     <div>
       <Image
@@ -16,7 +16,8 @@ export default function Spotlight({ image, artist }) {
         height={300}
         priority
       />
-      <h1>{artist}</h1>
+      <p>{artist}</p>
+      <h1>{title}</h1>
     </div>
   );
 }
@@ -29,6 +30,7 @@ export function SpotlightMain({ artPieces }) {
       <Spotlight
         image={randomArtPiece.imageSource}
         artist={randomArtPiece.artist}
+        title={randomArtPiece.title}
       />
     </div>
   );

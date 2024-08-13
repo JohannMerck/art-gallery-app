@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 export default createGlobalStyle`
   *,
@@ -11,4 +12,10 @@ export default createGlobalStyle`
     margin: 0;
     font-family: system-ui;
   }
+`;
+
+export const StyledArtPiecesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 `;
