@@ -12,6 +12,7 @@ export const StyledButton = styled.button`
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 700;
+  width: 150px;
   justify-content: center;
   line-height: 1rem;
   padding: 0.75rem 1.65rem;
