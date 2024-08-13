@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import ArtPieces from "../components/ArtPieces";
+import { SpotlightMain } from "@/components/Spotlight";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -12,5 +13,11 @@ export default function Home() {
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
-  return <ArtPieces pieces={data} />;
+  return (
+    <div>
+      <ArtPieces pieces={data} />
+
+      <SpotlightMain />
+    </div>
+  );
 }
