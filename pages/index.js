@@ -1,29 +1,16 @@
-import React, { useState } from "react";
-import useSWR from "swr";
-import ArtPieces from "../components/ArtPieces";
-import { SpotlightMain, getRandomSpotlightPiece } from "@/components/Spotlight";
-import {
-  StyledButton,
-  StyledHideButton,
-  StyledButtonWrapper,
-} from "@/public/ButtonStyles";
+import { useState, useEffect } from "react";
+import { getRandomSpotlightPiece, SpotlightMain } from "@/components/Spotlight";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
-
-export default function Home() {
-  const { data, error } = useSWR(
-    "https://example-apis.vercel.app/api/art",
-    fetcher
-  );
-
+export default function SpotlightPage({ artPieces }) {
   const [spotlightPiece, setSpotlightPiece] = useState(null);
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  useEffect(() => {
+    if (artPieces && artPieces.length > 0) {
+      setSpotlightPiece(getRandomSpotlightPiece(artPieces));
+    }
+  }, [artPieces]);
 
-  const toggleButtonClick = () => {
-    setSpotlightPiece(getRandomSpotlightPiece(data));
-  };
+  if (!artPieces) return <div>Loading...</div>;
 
   const toggleHideButton = () => {
     setSpotlightPiece(null); // Hide the spotlight by clearing the state
@@ -31,14 +18,6 @@ export default function Home() {
 
   return (
     <div>
-      <ArtPieces pieces={data} />
-
-      <StyledButtonWrapper>
-        <StyledButton onClick={toggleButtonClick}>Show Spotlight</StyledButton>
-        <StyledHideButton onClick={toggleHideButton}>
-          Hide Spotlight
-        </StyledHideButton>
-      </StyledButtonWrapper>
 
       {spotlightPiece && <SpotlightMain artPieces={[spotlightPiece]} />}
     </div>
