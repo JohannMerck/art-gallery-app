@@ -60,3 +60,8 @@ export const StyledButtonWrapper = styled.section`
   margin-bottom: 10px;
   gap: 10px;
 `;
+
+export const StyledFavoriteButton = styled(StyledButton)`
+  background-color: green;
+  color: yellow;
+`;

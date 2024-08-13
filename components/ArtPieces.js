@@ -1,10 +1,9 @@
 import React from "react";
 import ArtPiecePreview from "./ArtPiecePreview";
-import { StyledArtPiecesContainer } from "@/styles";
 
 function ArtPieces({ pieces }) {
   return (
-    <StyledArtPiecesContainer>
+    <div>
       {pieces.map((piece) => (
         <ArtPiecePreview
           key={piece.slug}
@@ -13,7 +12,7 @@ function ArtPieces({ pieces }) {
           artist={piece.artist}
         />
       ))}
-    </StyledArtPiecesContainer>
+    </div>
   );
 }
 
