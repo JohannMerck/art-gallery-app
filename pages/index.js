@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getRandomSpotlightPiece, SpotlightMain } from "@/components/Spotlight";
 import { StyledButton, StyledHideButton } from "@/public/ButtonStyles";
+import { StyledFlexContainer } from "@/styles";
 
 export default function SpotlightPage({ artPieces }) {
   const [spotlightPiece, setSpotlightPiece] = useState(null);
@@ -23,12 +24,15 @@ export default function SpotlightPage({ artPieces }) {
 
   return (
     <div>
-      <StyledButton onClick={toggleCreateSpotlightButton}>
-        Create Spotlight
-      </StyledButton>
-      <StyledHideButton onClick={toggleHideButton}>
-        Hide Spotlight
-      </StyledHideButton>
+      <StyledFlexContainer>
+        <StyledButton onClick={toggleCreateSpotlightButton}>
+          Create Spotlight
+        </StyledButton>
+        <StyledHideButton onClick={toggleHideButton}>
+          Hide Spotlight
+        </StyledHideButton>
+      </StyledFlexContainer>
+
       {spotlightPiece && <SpotlightMain artPieces={[spotlightPiece]} />}
     </div>
   );

@@ -14,8 +14,8 @@ export default createGlobalStyle`
   }
 `;
 
-export const StyledArtPiecesContainer = styled.div`
+export const StyledFlexContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
 `;
