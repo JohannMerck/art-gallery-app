@@ -47,3 +47,15 @@ export const StyledButton = styled.button`
     left: 2px;
   }
 `;
+
+export const StyledHideButton = styled(StyledButton)`
+  background-color: yellow;
+  color: red;
+`;
+
+export const StyledButtonWrapper = styled.section`
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+`;
