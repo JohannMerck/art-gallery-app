@@ -1,6 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
+export function getRandomSpotlightPiece(artPieces) {
+  const randomIndex = Math.floor(Math.random() * artPieces.length);
+  return artPieces[randomIndex];
+}
+
 export default function Spotlight({ image, artist }) {
   return (
     <div>
@@ -11,15 +16,9 @@ export default function Spotlight({ image, artist }) {
         height={300}
         priority
       />
-
       <h1>{artist}</h1>
     </div>
   );
-}
-
-function getRandomSpotlightPiece(artPieces) {
-  const randomIndex = Math.floor(Math.random() * artPieces.length);
-  return artPieces[randomIndex];
 }
 
 export function SpotlightMain({ artPieces }) {
