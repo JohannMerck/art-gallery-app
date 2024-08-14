@@ -1,11 +1,19 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useEffect, useContext } from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 // Create a context for art pieces info
 const ArtPiecesContext = createContext();
 
 // Export the provider component
 export function ArtPiecesProvider({ children }) {
-  const [artPiecesInfo, setArtPiecesInfo] = useState({});
+  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState(
+    "artPiecesInfo",
+    {
+      defaultValue: {},
+    }
+  );
+
+  useEffect(() => {}, []);
 
   // Function to toggle the favorite status of an art piece by its slug
   const toggleFavoriteStatus = (slug) => {
