@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getRandomSpotlightPiece, SpotlightMain } from "@/components/Spotlight";
 import { StyledButton, StyledHideButton } from "@/public/ButtonStyles";
-import { StyledFlexContainer, StyledBody } from "@/styles";
+import { StyledFlexContainer } from "@/styles";
+import { useArtPieces } from "@/components/ArtPiecesInfo";
 
 export default function SpotlightPage({ artPieces }) {
   const [spotlightPiece, setSpotlightPiece] = useState(null);
+  const { artPiecesInfo, toggleFavoriteStatus } = useArtPieces();
 
   useEffect(() => {
     if (artPieces && artPieces.length > 0) {
@@ -12,14 +14,16 @@ export default function SpotlightPage({ artPieces }) {
     }
   }, [artPieces]);
 
-  if (!artPieces) return <div>Loading...</div>;
+  if (artPieces.length === 0) return <div>Loading...</div>;
 
   const toggleHideButton = () => {
-    setSpotlightPiece(null); // Hide the spotlight by clearing the state
+    setSpotlightPiece(null);
   };
 
   const toggleCreateSpotlightButton = () => {
-    setSpotlightPiece(getRandomSpotlightPiece(artPieces));
+    if (artPieces.length > 0) {
+      setSpotlightPiece(getRandomSpotlightPiece(artPieces));
+    }
   };
 
   return (
@@ -33,7 +37,13 @@ export default function SpotlightPage({ artPieces }) {
         </StyledHideButton>
       </StyledFlexContainer>
 
-      {spotlightPiece && <SpotlightMain artPieces={[spotlightPiece]} />}
+      {spotlightPiece && (
+        <SpotlightMain
+          artPieces={[spotlightPiece]}
+          isFavorite={artPiecesInfo[spotlightPiece.slug] || false}
+          onToggleFavorite={() => toggleFavoriteStatus(spotlightPiece.slug)}
+        />
+      )}
     </div>
   );
 }

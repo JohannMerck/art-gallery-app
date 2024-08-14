@@ -7,6 +7,7 @@ function ArtPieces({ pieces }) {
       {pieces.map((piece) => (
         <ArtPiecePreview
           key={piece.slug}
+          slug={piece.slug} // Pass the slug here
           image={piece.imageSource}
           title={piece.name}
           artist={piece.artist}

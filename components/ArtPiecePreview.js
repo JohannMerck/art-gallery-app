@@ -1,12 +1,14 @@
-import { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import FavoriteButton from "./FavoriteButton";
+import { useArtPieces } from "./ArtPiecesInfo";
 
-function ArtPiecePreview({ image, title, artist }) {
-  const [isFavorite, setIsFavorite] = useState(false);
+function ArtPiecePreview({ image, title, artist, slug }) {
+  const { artPiecesInfo, toggleFavoriteStatus } = useArtPieces();
+  const isFavorite = artPiecesInfo[slug] || false;
 
-  const toggleFavoriteStatus = () => {
-    setIsFavorite((prevIsFavorite) => !prevIsFavorite);
+  const handleToggleFavorite = () => {
+    toggleFavoriteStatus(slug);
     console.log(`Favorite status for ${title}: ${!isFavorite}`);
   };
 
@@ -22,7 +24,7 @@ function ArtPiecePreview({ image, title, artist }) {
 
       <FavoriteButton
         isFavorite={isFavorite}
-        onToggleFavorite={toggleFavoriteStatus}
+        onToggleFavorite={handleToggleFavorite}
       />
 
       <h2>{title}</h2>
