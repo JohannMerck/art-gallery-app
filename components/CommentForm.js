@@ -29,8 +29,7 @@ export default function CommentForm({ onCommentSubmit }) {
   );
 }
 
-// CommentsDisplay Component
-function CommentsDisplay({ comments }) {
+export function CommentsDisplay({ comments }) {
   return (
     <div>
       <h2>Comments</h2>
