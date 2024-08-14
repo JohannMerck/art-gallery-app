@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import CommentForm from "./CommentForm";
+import { useState } from "react";
+import { CommentsDisplay } from "./CommentForm";
 
 export function getRandomSpotlightPiece(artPieces) {
   const randomIndex = Math.floor(Math.random() * artPieces.length);
@@ -23,9 +25,14 @@ export default function Spotlight({ image, artist, title }) {
   );
 }
 
+// SpotlightMain Component
 export function SpotlightMain({ artPieces }) {
+  const [comments, setComments] = useState([]);
   const randomArtPiece = getRandomSpotlightPiece(artPieces);
-  console.log(randomArtPiece);
+
+  function handleCommentSubmit(newComment) {
+    setComments((prevComments) => [...prevComments, newComment]);
+  }
 
   return (
     <div>
@@ -34,7 +41,8 @@ export function SpotlightMain({ artPieces }) {
         artist={randomArtPiece.artist}
         title={randomArtPiece.name}
       />
-      <CommentForm />
+      <CommentForm onCommentSubmit={handleCommentSubmit} />
+      <CommentsDisplay comments={comments} />
     </div>
   );
 }
