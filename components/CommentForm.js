@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { StyledHideButton } from "@/public/ButtonStyles";
 
+import { StyledCommentSpan } from "@/styles";
+
 export default function CommentForm({ onCommentSubmit }) {
   const [comment, setComment] = useState("");
 
@@ -35,8 +37,8 @@ export function CommentsDisplay({ comments }) {
       <h2>Comments</h2>
       {comments.map((comment, index) => (
         <div key={index}>
-          <p>{comment.text}</p>
-          <small>{comment.date}</small>
+          <StyledCommentSpan>{comment.text}</StyledCommentSpan>
+          <p>{comment.date}</p>
         </div>
       ))}
     </div>

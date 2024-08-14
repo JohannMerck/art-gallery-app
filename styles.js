@@ -112,3 +112,13 @@ export const StyledPiecesSpan = styled(StyledSpan)`
 export const StyledFavoritesSpan = styled(StyledSpan)`
   background-color: #d1d40c;
 `;
+
+export const StyledCommentSpan = styled.span`
+  margin-left: 15px;
+  font-size: large;
+  border: 1px solid #000000;
+  margin: 20px;
+  background-color: white;
+  width: 50px;
+  padding: 0.5rem 1.2rem;
+`;
