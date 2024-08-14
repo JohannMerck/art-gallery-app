@@ -4,6 +4,8 @@ import {
   StyledUlWrapper,
   StyledLi,
   StyledSpan,
+  StyledPiecesSpan,
+  StyledFavoritesSpan,
 } from "@/styles";
 
 export default function Navigation() {
@@ -13,18 +15,18 @@ export default function Navigation() {
         <StyledUlWrapper>
           <StyledLi>
             <Link href="/">
-              <p>Spotlight</p>
+              <StyledSpan>Spotlight</StyledSpan>
             </Link>
           </StyledLi>
           <StyledLi>
             <Link href="/art-pieces">
-              <p>Pieces</p>
+              <StyledPiecesSpan>Pieces</StyledPiecesSpan>
             </Link>
-            <StyledLi>
-              <Link href="/favorites">
-                <p>Favorites</p>
-              </Link>
-            </StyledLi>
+          </StyledLi>
+          <StyledLi>
+            <Link href="/favorites">
+              <StyledFavoritesSpan>Favorites</StyledFavoritesSpan>
+            </Link>
           </StyledLi>
         </StyledUlWrapper>
       </StyledNavigationWrapper>
