@@ -13,23 +13,21 @@ function ArtPiecePreview({ image, title, artist }) {
 
   return (
     <div>
-      <StyledImageWrapper>
-        <Image
-          src={image}
-          alt={title || "Artwork"}
-          width={500}
-          height={500}
-          priority
-        />
+      <Image
+        src={image}
+        alt={title || "Artwork"}
+        width={500}
+        height={500}
+        priority
+      />
 
-        <FavoriteButton
-          isFavorite={isFavorite}
-          onToggleFavorite={toggleFavoriteStatus}
-        />
+      <FavoriteButton
+        isFavorite={isFavorite}
+        onToggleFavorite={toggleFavoriteStatus}
+      />
 
-        <h2>{title}</h2>
-        <p>{artist}</p>
-      </StyledImageWrapper>
+      <h2>{title}</h2>
+      <p>{artist}</p>
     </div>
   );
 }

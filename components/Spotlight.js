@@ -10,17 +10,15 @@ export function getRandomSpotlightPiece(artPieces) {
 export default function Spotlight({ image, artist, title }) {
   return (
     <div>
-      <StyledImageWrapper>
-        <Image
-          src={image}
-          alt={`Artwork by ${artist}`}
-          width={500}
-          height={500}
-          priority
-        />
-        <p>{artist}</p>
-        <h1>{title}</h1>
-      </StyledImageWrapper>
+      <Image
+        src={image}
+        alt={`Artwork by ${artist}`}
+        width={500}
+        height={500}
+        priority
+      />
+      <p>{artist}</p>
+      <h1>{title}</h1>
     </div>
   );
 }
