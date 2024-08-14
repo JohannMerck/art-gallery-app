@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import FavoriteButton from "./FavoriteButton";
-import { StyledImageWrapper } from "@/styles";
 
 function ArtPiecePreview({ image, title, artist }) {
   const [isFavorite, setIsFavorite] = useState(false);

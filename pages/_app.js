@@ -1,7 +1,6 @@
 import GlobalStyle from "../styles";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
-import { StyledBody } from "../styles";
 
 const API_URL = "https://example-apis.vercel.app/api/art";
 
