@@ -9,20 +9,14 @@ import {
 export default function Navigation() {
   return (
     <nav>
-      <StyledNavigationWrapper>
-        <StyledUlWrapper>
-          <StyledLi>
-            <Link href="/">
-              <StyledSpan>Spotlight</StyledSpan>
-            </Link>
-          </StyledLi>
-          <StyledLi>
-            <Link href="/art-pieces">
-              <StyledSpan>Pieces</StyledSpan>
-            </Link>
-          </StyledLi>
-        </StyledUlWrapper>
-      </StyledNavigationWrapper>
+      <ul>
+        <li>
+          <Link href="/">Spotlight</Link>
+        </li>
+        <li>
+          <Link href="/art-pieces">Pieces</Link>
+        </li>
+      </ul>
     </nav>
   );
 }
