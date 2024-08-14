@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { StyledImageWrapper } from "@/styles";
+import CommentForm from "./CommentForm";
 
 export function getRandomSpotlightPiece(artPieces) {
   const randomIndex = Math.floor(Math.random() * artPieces.length);
@@ -34,6 +34,7 @@ export function SpotlightMain({ artPieces }) {
         artist={randomArtPiece.artist}
         title={randomArtPiece.name}
       />
+      <CommentForm />
     </div>
   );
 }
