@@ -1,11 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  compiler: {
-    styledComponents: true,
-  },
   reactStrictMode: true,
   images: {
-    domains: ["example-apis.vercel.app"],
+    domains: ["example-apis.vercel.app", "via.placeholder.com"],
   },
   webpack(config) {
     config.module.rules.push({

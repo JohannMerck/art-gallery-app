@@ -22,6 +22,7 @@ export const StyledFlexContainer = styled.div`
   flex-wrap: wrap;
 `;
 
+<<<<<<< HEAD
 export const StyledNavigationWrapper = styled.nav`
    font-size: 18px;
    background-image: linear-gradient(260deg,  #cddb0a 0%, #3498db 100%); 
@@ -125,4 +126,27 @@ export const StyledCommentSpan = styled.span`
 
 export const StyledWrapper = styled.section`
   display: flex;
+=======
+export const StyelePieces = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+  justify-content: flex-start;
+`;
+
+export const ItemStyle = styled.div`
+  max-width: 300px;
+  overflow: hidden;
+  text-align: center;
+`;
+
+export const ItemDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+>>>>>>> task-4
 `;

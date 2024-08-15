@@ -1,9 +1,22 @@
-import React from "react";
 import ArtPiecePreview from "./ArtPiecePreview";
+<<<<<<< HEAD
+=======
+import { StyelePieces } from "../styles";
 
-function ArtPieces({ pieces }) {
+export default function ArtPieces({ pieces }) {
+  if (!pieces || pieces.length === 0) {
+    return <div>No art pieces available</div>;
+  }
+
+  console.log("Art piece data:", pieces);
+>>>>>>> task-4
+
   return (
+<<<<<<< HEAD
     <div>
+=======
+    <StyelePieces>
+>>>>>>> task-4
       {pieces.map((piece) => (
         <ArtPiecePreview
           key={piece.slug}
@@ -11,10 +24,13 @@ function ArtPieces({ pieces }) {
           image={piece.imageSource}
           title={piece.name}
           artist={piece.artist}
+          slug={piece.slug}
         />
       ))}
+<<<<<<< HEAD
     </div>
+=======
+    </StyelePieces>
+>>>>>>> task-4
   );
 }
-
-export default ArtPieces;

@@ -18,16 +18,20 @@ export default function SpotlightPage({ artPieces }) {
 
   const toggleHideButton = () => {
     setSpotlightPiece(null);
+<<<<<<< HEAD
   };
 
   const toggleCreateSpotlightButton = () => {
     if (artPieces.length > 0) {
       setSpotlightPiece(getRandomSpotlightPiece(artPieces));
     }
+=======
+>>>>>>> task-4
   };
 
   return (
     <div>
+<<<<<<< HEAD
       <StyledFlexContainer>
         <StyledButton onClick={toggleCreateSpotlightButton}>
           Create Spotlight
@@ -44,6 +48,9 @@ export default function SpotlightPage({ artPieces }) {
           onToggleFavorite={() => toggleFavoriteStatus(spotlightPiece.slug)}
         />
       )}
+=======
+      {spotlightPiece && <SpotlightMain artPieces={[spotlightPiece]} />}
+>>>>>>> task-4
     </div>
   );
 }

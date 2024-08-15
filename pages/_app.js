@@ -1,28 +1,63 @@
 import GlobalStyle from "../styles";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
+<<<<<<< HEAD
 import { ArtPiecesProvider } from "@/components/ArtPiecesInfo";
+=======
+import useSWR from "swr";
+>>>>>>> task-4
 
-const API_URL = "https://example-apis.vercel.app/api/art";
+const URL = "https://example-apis.vercel.app/api/art";
 
-export default function App({ Component, pageProps }) {
-  const [artPieces, setArtPieces] = useState([]);
+function App({ Component, pageProps }) {
+  const fetcher = (url) => fetch(url).then((res) => res.json());
+
+  const { data, error } = useSWR(URL, fetcher);
+
+  const [artPiecesInfo, setArtPiecesInfo] = useState([]);
 
   useEffect(() => {
-    async function fetchArtPieces() {
-      const response = await fetch(API_URL);
-      const data = await response.json();
-      setArtPieces(data);
+    if (data) {
+      setArtPiecesInfo(
+        data.map((artPiece) => ({
+          slug: artPiece.slug,
+          isFavourite: false,
+        }))
+      );
     }
+<<<<<<< HEAD
     fetchArtPieces();
   }, []);
+=======
+  }, [data]);
+
+  function handleToggleFavourite(slug) {
+    setArtPiecesInfo((prevArtPiecesInfo) =>
+      prevArtPiecesInfo.map((artPiece) =>
+        artPiece.slug === slug
+          ? { ...artPiece, isFavourite: !artPiece.isFavourite }
+          : artPiece
+      )
+    );
+  }
+
+  if (!data && !error) return <div>Loading...</div>;
+  if (error) return <div>Error loading data...</div>;
+>>>>>>> task-4
 
   return (
     <ArtPiecesProvider>
       <GlobalStyle />
       <Layout>
-        <Component {...pageProps} artPieces={artPieces} />
+        <Component
+          {...pageProps}
+          artPieces={data}
+          artPiecesInfo={artPiecesInfo}
+          onToggleFavourite={handleToggleFavourite}
+        />
       </Layout>
     </ArtPiecesProvider>
   );
 }
+
+export default App;
