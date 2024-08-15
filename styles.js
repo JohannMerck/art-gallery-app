@@ -6,13 +6,12 @@ export default createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-    
   }
 
   body {
     margin: 0;
     font-family: system-ui;
-    background-image: linear-gradient(260deg,  rgb(42,244,152,255) 0%, #3498db 100%); 
+    background-image: linear-gradient(260deg, rgb(42,244,152,255) 0%, #3498db 100%);
   }
 `;
 
@@ -22,19 +21,19 @@ export const StyledFlexContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-<<<<<<< HEAD
 export const StyledNavigationWrapper = styled.nav`
-   font-size: 18px;
-   background-image: linear-gradient(260deg,  #cddb0a 0%, #3498db 100%); 
-   border: 1px solid rgba(0,0,0,0.2);
-   padding-bottom: 10px;
-   @media (min-width: 768px) {
-     display: flex;
-     justify-content: space-between;
-     padding-bottom: 0;
-     height: 70px;
-     align-items: center;
-     margin-bottom: 15px; 
+  font-size: 18px;
+  background-image: linear-gradient(260deg, #cddb0a 0%, #3498db 100%);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 10px;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
 `;
 
 export const StyledUlWrapper = styled.ul`
@@ -74,17 +73,10 @@ export const StyledSpan = styled.span`
   padding: 0.75rem 1.65rem;
   position: relative;
   text-align: center;
-  text-decoration: none #000000 solid;
-  text-decoration-thickness: auto;
-  width: 5%;
-  max-width: 460px;
-  position: relative;
+  text-decoration: none;
   cursor: pointer;
   transform: rotate(-2deg);
   user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 100px;
 
   &:focus {
     outline: 0;
@@ -126,13 +118,22 @@ export const StyledCommentSpan = styled.span`
 
 export const StyledWrapper = styled.section`
   display: flex;
-=======
+`;
+
+export const StyledArtPiecesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+`;
+
 export const StyelePieces = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   padding: 10px;
   justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
 `;
 
 export const ItemStyle = styled.div`
@@ -148,5 +149,4 @@ export const ItemDetails = styled.div`
   gap: 5px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
->>>>>>> task-4
 `;
