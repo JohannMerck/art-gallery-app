@@ -134,6 +134,7 @@ export const StyelePieces = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
+  padding-left: 50px;
 `;
 
 export const ItemStyle = styled.div`
@@ -150,3 +151,5 @@ export const ItemDetails = styled.div`
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
+
+// ==================================

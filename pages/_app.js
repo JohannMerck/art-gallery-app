@@ -1,8 +1,8 @@
 import GlobalStyle from "../styles";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
-import useSWR from "swr";
 import { ArtPiecesProvider } from "@/components/ArtPiecesInfo";
+import useSWR from "swr";
 
 const URL = "https://example-apis.vercel.app/api/art";
 
@@ -34,6 +34,7 @@ function App({ Component, pageProps }) {
     );
   }
 
+  if (error) return <div>Failed to load</div>;
   if (!data && !error) return <div>Loading...</div>;
   if (error) return <div>Error loading data...</div>;
 
