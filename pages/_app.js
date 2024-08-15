@@ -1,11 +1,8 @@
 import GlobalStyle from "../styles";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
-<<<<<<< HEAD
 import { ArtPiecesProvider } from "@/components/ArtPiecesInfo";
-=======
 import useSWR from "swr";
->>>>>>> task-4
 
 const URL = "https://example-apis.vercel.app/api/art";
 
@@ -25,10 +22,6 @@ function App({ Component, pageProps }) {
         }))
       );
     }
-<<<<<<< HEAD
-    fetchArtPieces();
-  }, []);
-=======
   }, [data]);
 
   function handleToggleFavourite(slug) {
@@ -41,9 +34,8 @@ function App({ Component, pageProps }) {
     );
   }
 
+  if (error) return <div>Failed to load</div>;
   if (!data && !error) return <div>Loading...</div>;
-  if (error) return <div>Error loading data...</div>;
->>>>>>> task-4
 
   return (
     <ArtPiecesProvider>
