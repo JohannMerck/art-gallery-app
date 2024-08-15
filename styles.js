@@ -19,3 +19,26 @@ export const StyledArtPiecesContainer = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
 `;
+
+export const ContainerStyle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+  justify-content: flex-start;
+`;
+
+export const ItemStyle = styled.div`
+  max-width: 300px;
+  overflow: hidden;
+  text-align: center;
+`;
+
+export const ItemDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+`;

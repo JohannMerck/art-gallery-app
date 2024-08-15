@@ -1,20 +1,23 @@
-import React from "react";
 import ArtPiecePreview from "./ArtPiecePreview";
-import { StyledArtPiecesContainer } from "@/styles";
 
-function ArtPieces({ pieces }) {
+export default function ArtPieces({ pieces }) {
+  if (!pieces || pieces.length === 0) {
+    return <div>No art pieces available</div>;
+  }
+
+  console.log("Art piece data:", pieces);
+
   return (
-    <StyledArtPiecesContainer>
+    <div>
       {pieces.map((piece) => (
         <ArtPiecePreview
           key={piece.slug}
           image={piece.imageSource}
           title={piece.name}
           artist={piece.artist}
+          slug={piece.slug}
         />
       ))}
-    </StyledArtPiecesContainer>
+    </div>
   );
 }
-
-export default ArtPieces;

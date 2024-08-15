@@ -13,12 +13,11 @@ export default function SpotlightPage({ artPieces }) {
   if (!artPieces) return <div>Loading...</div>;
 
   const toggleHideButton = () => {
-    setSpotlightPiece(null); // Hide the spotlight by clearing the state
+    setSpotlightPiece(null);
   };
 
   return (
     <div>
-
       {spotlightPiece && <SpotlightMain artPieces={[spotlightPiece]} />}
     </div>
   );
