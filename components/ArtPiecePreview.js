@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import FavoriteButton from "./FavoriteButton";
 import { useArtPieces } from "./ArtPiecesInfo";
+import { StyledWrapper } from "@/styles";
 
 function ArtPiecePreview({ image, title, artist, slug }) {
   const { artPiecesInfo, toggleFavoriteStatus } = useArtPieces();
@@ -14,13 +15,15 @@ function ArtPiecePreview({ image, title, artist, slug }) {
 
   return (
     <div>
-      <Image
-        src={image}
-        alt={title || "Artwork"}
-        width={500}
-        height={500}
-        priority
-      />
+      <StyledWrapper>
+        <Image
+          src={image}
+          alt={title || "Artwork"}
+          width={500}
+          height={500}
+          priority
+        />
+      </StyledWrapper>
 
       <FavoriteButton
         isFavorite={isFavorite}

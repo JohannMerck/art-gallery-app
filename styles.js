@@ -122,3 +122,7 @@ export const StyledCommentSpan = styled.span`
   width: 50px;
   padding: 0.5rem 1.2rem;
 `;
+
+export const StyledWrapper = styled.section`
+  display: flex;
+`;
