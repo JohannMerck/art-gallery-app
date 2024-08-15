@@ -20,7 +20,7 @@ export const StyledArtPiecesContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-export const ContainerStyle = styled.div`
+export const StyelePieces = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;

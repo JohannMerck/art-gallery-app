@@ -1,4 +1,5 @@
 import ArtPiecePreview from "./ArtPiecePreview";
+import { StyelePieces } from "../styles";
 
 export default function ArtPieces({ pieces }) {
   if (!pieces || pieces.length === 0) {
@@ -8,7 +9,7 @@ export default function ArtPieces({ pieces }) {
   console.log("Art piece data:", pieces);
 
   return (
-    <div>
+    <StyelePieces>
       {pieces.map((piece) => (
         <ArtPiecePreview
           key={piece.slug}
@@ -18,6 +19,6 @@ export default function ArtPieces({ pieces }) {
           slug={piece.slug}
         />
       ))}
-    </div>
+    </StyelePieces>
   );
 }
